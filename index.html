@@ -4,14 +4,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">  
 <title>Join the Legion</title> 
 <script>
-  (window).load(function () {
-    (".login-btn").click(function(){
-       ('.login-popup').show();
-    });
-    ('.login-popup').click(function(){
-        $('.login-popup').hide();
-    });
-});
+ function showLoginFunction() {
+  var x = document.getElementById("login-popup");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
 </script>  
 <style>   
 Body {  
@@ -77,21 +77,23 @@ button {
     <div class="center">
       <p>if you did not seek us, leave now.</p>
       <p>if you did, leave now. You are not ready to cross.</p>
-      <a class="login-btn">login</a>
+      <a onclick="showLoginFunction()">login</a>
     </div>  
-  </center>  
+  </center>
+  <center>
+  <div id="login-popup">
     <center> <h1>login</h1> </center>
   
     <center><form>  
-      <div class="login-popup">
         <div class="container" id="login">   
             <label></label>   
             <input type="text" placeholder="" name="username" required>  
             <label></label>   
             <input type="password" placeholder="" name="password" required>  
             <button type="submit" herf="javascript:void(0)">login</button>
-        </div> 
-       </div> 
-      </form></center>     
+        </div>
+      </form></center> 
+</div> 
+</center>    
 </body>     
 </html>
